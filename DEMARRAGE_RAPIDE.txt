@@ -1,0 +1,181 @@
+═══════════════════════════════════════════════════════════
+  🚀 KZNUTRITION E-COMMERCE - GUIDE DE DÉMARRAGE RAPIDE
+═══════════════════════════════════════════════════════════
+
+📋 ÉTAPE 1: Installation des dépendances
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Terminal 1 - Backend:
+  cd backend
+  npm install
+
+Terminal 2 - Frontend:
+  cd frontend
+  npm install
+
+⏱️  Temps estimé: 2-3 minutes
+
+
+🎯 ÉTAPE 2: Démarrage de l'application
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Terminal 1 - Backend:
+  cd backend
+  npm start
+  
+  ✅ Serveur démarré sur http://localhost:5000
+
+Terminal 2 - Frontend:
+  cd frontend
+  npm start
+  
+  ✅ Application ouverte sur http://localhost:3000
+
+
+🌐 ACCÈS À L'APPLICATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👤 Interface Client:
+   http://localhost:3000
+   - Parcourir les produits
+   - Ajouter au panier
+   - Passer des commandes
+
+👨‍💼 Interface Admin:
+   http://localhost:3000/admin
+   - Gérer les produits
+   - Voir les commandes
+   - Statistiques et dashboard
+
+
+📦 FONCTIONNALITÉS PRINCIPALES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✨ POUR LES CLIENTS:
+   ✓ Boutique avec filtres avancés
+   ✓ Panier d'achat persistant
+   ✓ Processus de commande complet
+   ✓ Design responsive (mobile/desktop)
+
+✨ POUR LES ADMINS:
+   ✓ Dashboard avec statistiques
+   ✓ Gestion complète des produits
+   ✓ Suivi des commandes
+   ✓ Gestion automatique du stock
+   ✓ Graphiques des ventes
+
+
+🎨 DESIGN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Thème: Noir et Jaune (#EAB308)
+Style: Moderne, professionnel, responsive
+
+
+📊 GESTION DES STOCKS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Le système gère automatiquement:
+  🟢 Stock > 10 unités: "En stock"
+  🟠 Stock ≤ 10 unités: "Stock faible"
+  🔴 Stock = 0: "Rupture de stock"
+
+Le stock est déduit automatiquement lors des commandes!
+
+
+🗂️ STRUCTURE DU PROJET
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+kznutrition/
+├── backend/              # API Node.js + Express
+│   ├── server.js         # Serveur principal
+│   ├── package.json      # Dépendances backend
+│   └── kznutrition.db    # Base de données SQLite
+│
+├── frontend/             # Application React
+│   ├── src/
+│   │   ├── components/   # Composants réutilisables
+│   │   ├── pages/        # Pages de l'application
+│   │   ├── context/      # Context API (Panier)
+│   │   ├── utils/        # Fonctions utilitaires
+│   │   ├── App.js        # Composant principal
+│   │   └── index.js      # Point d'entrée
+│   ├── public/           # Fichiers statiques
+│   └── package.json      # Dépendances frontend
+│
+├── README.md             # Documentation complète
+└── DEMARRAGE_RAPIDE.txt  # Ce fichier
+
+
+🔧 CONFIGURATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Backend:
+  - Port: 5000
+  - Base de données: SQLite (kznutrition.db)
+  - API: REST
+
+Frontend:
+  - Port: 3000
+  - Framework: React 18
+  - Styling: Tailwind CSS
+  - Routing: React Router
+
+
+📝 API ENDPOINTS PRINCIPAUX
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Produits:
+  GET    /api/products           # Liste des produits
+  POST   /api/products           # Créer un produit
+  PUT    /api/products/:id       # Mettre à jour
+  DELETE /api/products/:id       # Supprimer
+
+Commandes:
+  GET    /api/orders             # Liste des commandes
+  POST   /api/orders             # Créer une commande
+  PATCH  /api/orders/:id/status  # Mettre à jour le statut
+
+Statistiques:
+  GET    /api/stats/dashboard    # Stats du dashboard
+
+
+⚠️  DÉPANNAGE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Problème: "Port 5000 already in use"
+Solution: Arrêtez le processus utilisant le port:
+  lsof -ti:5000 | xargs kill -9
+
+Problème: "Cannot find module"
+Solution: Réinstallez les dépendances:
+  rm -rf node_modules
+  npm install
+
+Problème: Frontend ne se connecte pas au backend
+Solution: Vérifiez que le backend est démarré sur le port 5000
+
+
+💡 CONSEILS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Gardez les deux terminaux ouverts (backend + frontend)
+2. Le backend crée automatiquement des produits de démonstration
+3. La base de données SQLite est créée automatiquement
+4. Le panier est sauvegardé dans localStorage
+5. Pour réinitialiser: supprimez kznutrition.db et redémarrez
+
+
+📚 PLUS D'INFORMATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Consultez le README.md pour:
+  - Documentation complète de l'API
+  - Guide de personnalisation
+  - Fonctionnalités avancées
+  - Roadmap et améliorations futures
+
+
+═══════════════════════════════════════════════════════════
+  ✅ Vous êtes prêt! Bon développement! 💪
+═══════════════════════════════════════════════════════════

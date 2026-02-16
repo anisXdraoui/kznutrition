@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: kznutrition-backend
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: kznutrition-db
+          property: connectionString
+
+databases:
+  - name: kznutrition-db
+    plan: free
+    region: frankfurt
